@@ -24,10 +24,10 @@ SOFTWARE.
 """
 """
 ╔══════════════════════════════════════════════════════════════════════════════╗
-║                                                                              ║
-║  ZonQuery                                                                    ║
-║  A library for parsing selectors and building ASTs for JSON data queries.    ║
-║                                                                              ║
+║                                                                                     ║
+║  ZonQuery                                                                           ║
+║  A library for parsing selectors and building ASTs for JSON data queries.           ║
+║                                                                                     ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
 
 *** WORK IN PROGRESS ***
