@@ -32,7 +32,7 @@ The selector syntax is inspired by jQuery, CSS selectors, and AWK.
 
 ## Sample Input and Output
 - A couple of examples are listed below for reference.
-- More examples are included in the unittest at the end of this file.
+- More examples are included in the unittest at the end of the library file.
 
 This library is designed to be lightweight (~600 lines), and self-contained.
 
