@@ -80,7 +80,7 @@ class Token:
         return self.is_operator and self.operator.arity is Arity.UNARY
 
     def is_compound_operator_with(self, char: str) -> bool:
-        return (char == EQUAL_CHAR and
+        return (char == Operator.EQUAL.symbol and
                 self.word in COMPOUND_OPERATOR_EQUAL_PREFIXES) or (
                     char == self.word and
                     self.word in COMPOUND_OPERATOR_DOUBLED_CHARS)
@@ -423,16 +423,28 @@ class Separator(StrEnum):
     CLOSE_PARENTHESIS = ")"
 
 
-DELIMITERS: set[str] = {str(s) for s in Separator} | {str(s) for s in Operator}
-NON_RIGHT_ANDABLE_CHARS: set[str] = set(DELIMITERS) - {")"}
-
-SEPARATOR_CHARS: set[str] = set(".,=<>!\"'{}[]()")
-QUOTE_CHARS: set[str] = set("\"'")
-COMPOUND_OPERATOR_EQUAL_PREFIXES = set("<>!")
-COMPOUND_OPERATOR_DOUBLED_CHARS = set("=&|")
 EMPTY: str = ""
-EQUAL_CHAR: str = "="
 MINUS_CHAR: str = "-"
+QUOTE_CHARS: set[str] = set("\"'")
+
+DELIMITERS: set[str] = set(Separator) | set(Operator._MAP.keys())
+NON_RIGHT_ANDABLE_CHARS: set[str] = DELIMITERS - {Separator.CLOSE_PARENTHESIS}
+SEPARATOR_CHARS: set[str] = DELIMITERS - {Separator.RANGE} | QUOTE_CHARS
+
+COMPOUND_OPERATOR_EQUAL_PREFIXES = {
+    op.symbol[0] for op in (
+        Operator.LESS_OR_EQUAL,
+        Operator.GREATER_OR_EQUAL,
+        Operator.NOT_EQUAL,
+    )
+}
+COMPOUND_OPERATOR_DOUBLED_CHARS = {
+    op.symbol[0] for op in (
+        Operator.EQUAL_2,
+        Operator.AND_2,
+        Operator.OR_2,
+    )
+}
 
 
 def str_ls(ls: list[Any]) -> list[str]:
