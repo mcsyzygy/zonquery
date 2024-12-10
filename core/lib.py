@@ -17,3 +17,11 @@ except ImportError:
 
 def as_json(data: dict[str, Any]) -> str:
     return json.dumps(data, **JSON_OPTIONS).decode("utf-8")
+
+
+def str_ls(ls: list[Any]) -> list[str]:
+    return [str(t) for t in ls]
+
+
+def print_ls(header: str, ls: list[Any]) -> None:
+    print(f"{header}: {str_ls(ls)}")
