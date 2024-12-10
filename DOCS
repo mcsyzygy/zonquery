@@ -1,0 +1,35 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                                                                              ║
+║  ZonQuery                                                                    ║
+║  A library for parsing selectors and building ASTs for JSON data queries.    ║
+║                                                                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+*** WORK IN PROGRESS ***
+
+This Python 3.12 library parses string selectors for extracting nodes from JSON
+data and builds an Abstract Syntax Tree (AST) to be interpreted for node retrieval.
+The selector syntax is inspired by jQuery, CSS selectors, and AWK.
+
+Notable Features:
+- Supports function calls with or without arguments.
+- Allows rich expressions with logical and relational operators,
+  adhering to operator precedence and associativity.
+- Enables expression grouping using parentheses.
+- Handles indexes and ranges for precise node targeting.
+- Nested selectors are supported, including embedding within expressions.
+
+Current Status:
+- AST parser implementation is nearly complete.
+- Interpreter implementation is pending and will be added soon.
+
+Dependencies:
+- Zero external dependencies.
+
+Sample Input and Output:
+- A couple of examples are listed below for reference.
+- More examples are included in the unittest at the end of this file.
+
+This library is designed to be lightweight (~600 lines), and self-contained.
+
+════════════════════════════════════════════════════════════════════════════════
