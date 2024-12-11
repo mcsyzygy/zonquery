@@ -103,12 +103,12 @@ class Token:
     def __eq__(self, other):
         if not isinstance(other, (Token, str, StrEnum)):
             return NotImplemented()
-        return self.word == other if isinstance(other, str) else str(other)
+        return self.word == str(other)
 
     def __ne__(self, other):
         if not isinstance(other, (Token, str, StrEnum)):
             return NotImplemented()
-        return self.word != other if isinstance(other, str) else str(other)
+        return self.word != str(other)
 
 
 class Predicate:
